@@ -127,7 +127,7 @@ function Drawing.drawMiscData(x, y)
 	end
 	wgui.text(x, y, "H Spd: " .. MoreMaths.Round(speed, 5))
 
-	wgui.text(x, y + 48, "Spd Efficiency: " .. Engine.GetSpeedEfficiency() .. "%")
+	wgui.text(x, y + 48, "Spd Efficiency: " .. MoreMaths.Round(Engine.GetSpeedEfficiency(), 1) .. "%")
 
 	speed = 0
 	if Memory.Mario.VSpeed > 0 then
