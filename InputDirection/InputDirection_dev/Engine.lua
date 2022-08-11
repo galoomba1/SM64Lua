@@ -54,17 +54,12 @@ function Engine.inputsForAngle()
 		end
 	end
 	    -- Set up target speed
-		if (Settings.Layout.Button.strain_button.target_strain == true) then
-			ENABLE_TARGET_SPEED = 1
-		else
-			ENABLE_TARGET_SPEED = 0
-		end
 		if (Settings.Layout.Button.strain_button.always == true) then
 			offset = 3
 		else
 			offset = 0
 		end
-	if (ENABLE_TARGET_SPEED == 1) then
+	if Settings.Layout.Button.strain_button.target_strain and Memory.Mario.Action & 0x00000800 > 0 then
 		if Memory.Mario.Action == 0x04000440 or Memory.Mario.Action == 0x0400044A or Memory.Mario.Action == 0x08000239 or Memory.Mario.Action == 0x0C000232 or Memory.Mario.Action == 0x04000442 or Memory.Mario.Action == 0x04000443 or Memory.Mario.Action == 0x010208B7 or Memory.Mario.Action == 0x04000445 or Memory.Mario.Action == 0x00840454 or Memory.Mario.Action == 0x00840452 or (Memory.Mario.Action > 0x0400046F and Memory.Mario.Action < 0x04000474) or (Memory.Mario.Action > 0x00000473 and Memory.Mario.Action < 0x00000478) then
 			actionflag=1
 		else
